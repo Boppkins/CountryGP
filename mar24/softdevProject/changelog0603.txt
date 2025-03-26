@@ -1,0 +1,4 @@
+database connection - info not hardcoded, pulled from database tables
+no longer using JSON to add data to(iteration not uploaded)
+add patient form now working - adds patient to phpMyAdmin database correctly
+added delete patient 
