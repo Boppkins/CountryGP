@@ -1,7 +1,13 @@
 <?php
-require 'lib/patient.php';
+session_start();
 
-// pulls connection from config
+// Redirect if not logged in or if user is not staff
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'staff') {
+    header('Location: login.php'); // or show an error page
+    exit;
+}
+
+require 'lib/patient.php';
 require 'lib/config.php';
 
 $patientModel = new patient($database);

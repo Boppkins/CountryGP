@@ -1,8 +1,15 @@
 <?php
+session_start();
+
+// Redirect if not logged in or if user is not staff
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'staff') {
+    header('Location: login.php'); // or show an error page
+    exit;
+}
+
 require 'lib/database.php';
 require 'lib/account.php';
 
-// pulls connection from config
 require 'lib/config.php';
 
 $accountModel = new account($database);

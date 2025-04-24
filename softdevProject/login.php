@@ -3,15 +3,16 @@ require 'lib/database.php';
 require 'lib/account.php';
 require 'lib/config.php';
 
+session_start(); // Always start the session before any HTML
+
 $account = new account($database);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['email'], $_POST['password'])) {
         $user = $account->login($_POST['email'], $_POST['password']);
         if ($user) {
-            session_start();
-            $_SESSION['user'] = $user;
-            header('Location: login.php'); 
+            $_SESSION['user'] = $user; // Save user data in session
+            header('Location: login.php'); // Redirect to refresh the page
             exit;
         } else {
             $error = "No no no tututu";
@@ -30,6 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 
+<?php if (isset($_SESSION['user'])): ?>
+    <h2>Welcome, <?php echo htmlspecialchars($_SESSION['user']['name']); ?>!, You can now order a prescription!</h2>
+    <p><a href="logout.php">Logout</a></p>
+<?php else: ?>
     <h2>Login</h2>
     <form method="POST" action="login.php">
         <label for="email">Email: </label>
@@ -44,5 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php if (isset($error)) : ?>
         <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
+<?php endif; ?>
+
 </body>
 </html>

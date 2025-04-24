@@ -2,27 +2,27 @@
 require 'lib/database.php';
 require 'lib/meds.php'; 
 require_once 'lib/order.php';
-
 require 'lib/config.php';
+
+session_start();
 
 $order = new order($database);
 $medications = new meds($database); 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['persc']) && isset($_POST['patientName'])) {
+    if (isset($_SESSION['user']) && isset($_POST['persc'])) {
         $persc = $_POST['persc'];
-        $patientName = $_POST['patientName'];
+        $patientName = $_SESSION['user']['name'];
 
         $order->updatePrescription($patientName, $persc);
 
-        header('Location: /');
+        header('Location: /'); // Redirect after success
         exit;
     } else {
-        echo "Prescription or Patient Name missing!";
+        echo "You must be logged in and provide a prescription.";
     }
 }
 
-// sees medications from table
 $availableMedications = $medications->getMedications();
 ?>
 
@@ -38,22 +38,25 @@ $availableMedications = $medications->getMedications();
 
 <main>
     <h2>Order Prescription</h2>
-    <form method="post" action="order.php">
-    <label for="patientName">Patient Name:</label><br>
-    <input type="text" id="patientName" name="patientName" required><br><br>
 
-    <label for="persc">Prescription:</label><br>
-    <select id="persc" name="persc" required>
-        <?php
-        // loop through the medications and create options for the dropdown
-        foreach ($availableMedications as $medication) {
-            echo "<option value=\"" . htmlspecialchars($medication['name']) . "\">" . htmlspecialchars($medication['name']) . "</option>";
-        }
-        ?>
-    </select><br><br>
+    <?php if (isset($_SESSION['user'])): ?>
+        <p>Ordering as: <strong><?php echo htmlspecialchars($_SESSION['user']['name']); ?></strong></p>
 
-    <input type="submit" value="Submit Request">
-</form>
+        <form method="post" action="order.php">
+            <label for="persc">Prescription:</label><br>
+            <select id="persc" name="persc" required>
+                <?php foreach ($availableMedications as $medication): ?>
+                    <option value="<?php echo htmlspecialchars($medication['name']); ?>">
+                        <?php echo htmlspecialchars($medication['name']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select><br><br>
+
+            <input type="submit" value="Submit Request">
+        </form>
+    <?php else: ?>
+        <p style="color: red;">Please <a href="login.php">log in</a> to order a prescription.</p>
+    <?php endif; ?>
 
 </main>
 

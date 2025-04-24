@@ -1,4 +1,5 @@
 <?php
+// MAY JUST NEED TO SCRAP TBH
 require 'lib/database.php';
 require 'lib/appointment.php';
 
