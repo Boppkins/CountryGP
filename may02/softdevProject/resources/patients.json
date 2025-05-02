@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "dob": "01-01-2000",
+        "persc": "Epinephrine (25mg) - Nut allergen",
+        "address": "123 RealFake St. ",
+        "emcon": "Debra Morgan - Mother - 087-5555-555"
+    },
+    {
+        "id": 2,
+        "name": "Trevor Philips",
+        "dob": "21-02-1999",
+        "persc": "",
+        "address": "77 Sandy Shores, Los Santos",
+        "emcon": "Patrica Philips - Wife - 555-5555-555"
+    },
+    {
+        "id": 3,
+        "name": "Bruce Wayne",
+        "dob": "23-11-1975",
+        "persc": "Inhaler - Asthma ",
+        "address": "Wayne Manor, Gotham ",
+        "emcon": "Alfred - HouseMate- 666-7777-888"
+    },
+    {
+        "id": 4,
+        "name": "Boe Baymason",
+        "dob": "16-11-1969",
+        "persc": "",
+        "address": "Weazel Plaza, San Andreas",
+        "emcon": ""
+    },
+    {
+        "id": null,
+        "name": "NameForTest",
+        "dob": "2025-03-06",
+        "persc": "No perscription",
+        "address": "ADdressForTest",
+        "emcon": "ContactForTestGibMeIdPls"
+    }
+]
