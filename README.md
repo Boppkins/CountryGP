@@ -1,10 +1,12 @@
-Assets and Tutorials:
+**Assets and Tutorials:**
+
 - Brightspace: Practical Block 2: Build a no-frills PHP CRUD App with routing -part1 & 2. (https://brightspace.tudublin.ie/d2l/le/content/359305/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-3328223)
 - Brightspace: Practical Block 3: Login with sessions labsheet. (https://brightspace.tudublin.ie/d2l/le/content/359305/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-3328223)
 - SymfonyCasts: Learn PHP Courses 1, 2 & 3. (https://symfonycasts.com/tracks/php)
 - W3Schools: PHP Tutorial (https://www.w3schools.com/php/)
 
-Contribution Statement:
+**Contribution Statement:**
+
 **Mark Hopkins:**
 - Database creation & SQL file.
 - CRUD implementation.
@@ -19,7 +21,7 @@ Contribution Statement:
 - Sessions implementation
 
 
-Note:
+**Note:**
 -Anything to do with "Appointments" or appointments.php was scrapped due to time constraints.
 -Early versions of project was first uploaded to a shared OneDrive, then uploaded to GitHub as we did not know GitHub was required and used OneDrive for convenience. 
 -GitHub (https://github.com/Boppkins/CountryGP)
