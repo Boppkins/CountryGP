@@ -13,7 +13,10 @@ Contribution Statement:
 - Class files and webpage files.
 - Unit test files
 
-Kyle Geraghty:
+**Kyle Geraghty:**
+- Class files
+- CRUD implementation
+- Sessions implementation
 
 
 Note:
