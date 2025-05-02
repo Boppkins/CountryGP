@@ -5,13 +5,16 @@ Assets and Tutorials:
 - W3Schools: PHP Tutorial (https://www.w3schools.com/php/)
 
 Contribution Statement:
-Mark Hopkins:
--Database creation & SQL file.
--CRUD implementation.
--Sessions implementation.
--Database PDO connection.
--Class files and webpage files.
--Unit test files
+**Mark Hopkins:**
+- Database creation & SQL file.
+- CRUD implementation.
+- Sessions implementation.
+- Database PDO connection.
+- Class files and webpage files.
+- Unit test files
+
+Kyle Geraghty:
+
 
 Note:
 -Anything to do with "Appointments" or appointments.php was scrapped due to time constraints.
