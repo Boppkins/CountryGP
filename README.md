@@ -20,7 +20,7 @@
 - CRUD implementation
 - Sessions implementation
 
-**Favour Fasan:***
+**Favour Fasan:**
 - CRUD implementation
 - Webpage files
 - HTML Templates
