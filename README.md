@@ -20,6 +20,11 @@
 - CRUD implementation
 - Sessions implementation
 
+**Favour Fasan:***
+- CRUD implementation
+- Webpage files
+- HTML Templates
+
 
 **Note:**
 -Anything to do with "Appointments" or appointments.php was scrapped due to time constraints.
